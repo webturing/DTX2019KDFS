@@ -1,44 +1,49 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
+
 struct Node {
-	int data;
-	struct Node *next;
-}*head=NULL;
-void add(struct Node *p) {//Í·²å·¨ 
-	p->next=head;
-	head=p;
+    int data;
+    struct Node *next;
+} *head = NULL;
+
+void add(struct Node *p) {//Í·ï¿½å·¨
+    p->next = head;
+    head = p;
 }
-void pop(){//É¾³ýÍ·½Úµã 
-	if(head==NULL)return ; 	//1. ÅÐ¶ÏÊÇ·ñÊÇ¿ÕÁ´±í
-	struct Node *p=head;   //2.¼Ç×¡×¼±¸Ïú»ÙµÄ½ÚµãµØÖ· 
-	head=head->next;
-	free(p); //Ïú»ÙÔ­À´µÄÍ·½Úµã£¬ÊÍ·Åheap¿Õ¼ä 
+
+void pop() {//É¾ï¿½ï¿½Í·ï¿½Úµï¿½
+    if (head == NULL)return;    //1. ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½
+    struct Node *p = head;   //2.ï¿½ï¿½×¡×¼ï¿½ï¿½ï¿½ï¿½ï¿½ÙµÄ½Úµï¿½ï¿½Ö·
+    head = head->next;
+    free(p); //ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Í·ï¿½Úµã£¬ï¿½Í·ï¿½heapï¿½Õ¼ï¿½
 }
+
 void print() {
-	if(head==NULL) {
-		puts("[]");
-	} else {
-		struct Node *p=head;
-		while(p!=NULL) {
-			printf("->%d ",p->data) ;
-			p=p->next;
-		}
-		printf("\n");
-	}
+    if (head == NULL) {
+        puts("[]");
+    } else {
+        struct Node *p = head;
+        while (p != NULL) {
+            printf("->%d ", p->data);
+            p = p->next;
+        }
+        printf("\n");
+    }
 }
+
 int main() {
-	int i;
-	for(i=10;i>=1;i--){
-		struct Node *q=(struct Node*)malloc(sizeof(struct Node));
-		q->data=i;
-		q->next=NULL;
-		add(q);		
-	}
-	print();
-	for(i=0;i<20;i++){
-		pop();
-		print();
-	}
-	return 0;
+    int i;
+    for (i = 10; i >= 1; i--) {
+        struct Node *q = (struct Node *) malloc(sizeof(struct Node));
+        q->data = i;
+        q->next = NULL;
+        add(q);
+    }
+    print();
+    for (i = 0; i < 20; i++) {
+        pop();
+        print();
+    }
+    return 0;
 }

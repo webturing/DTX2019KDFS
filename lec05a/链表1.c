@@ -1,20 +1,21 @@
 #include<stdio.h>
 #include<math.h>
+
 struct Node {
-	int data;
-	struct Node *next;
+    int data;
+    struct Node *next;
 };
 
 int main() {
-	struct Node p={1,NULL};
-	struct Node q={2,NULL};
-	struct Node r={3,NULL};
-	printf("%d\n",p.next==NULL);//ÅĞ¶ÏpÊÇ·ñÊÇtail 
-	p.next=&r;
-	printf("%d\n",p.data);//·ÃÎÊpµÄdataÓò 
-	printf("%d\n",p.next==NULL);//ÅĞ¶ÏpÊÇ·ñÊÇtail 
-	if(p.next!=NULL){
-		printf("%d",p.next->data);
-	}
-	return 0;
+    struct Node p = {1, NULL};
+    struct Node q = {2, NULL};
+    struct Node r = {3, NULL};
+    printf("%d\n", p.next == NULL);//ï¿½Ğ¶ï¿½pï¿½Ç·ï¿½ï¿½ï¿½tail
+    p.next = &r;
+    printf("%d\n", p.data);//ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½dataï¿½ï¿½
+    printf("%d\n", p.next == NULL);//ï¿½Ğ¶ï¿½pï¿½Ç·ï¿½ï¿½ï¿½tail
+    if (p.next != NULL) {
+        printf("%d", p.next->data);
+    }
+    return 0;
 }
