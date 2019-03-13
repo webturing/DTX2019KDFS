@@ -1,0 +1,6 @@
+5
+tom 98
+jack 87
+peter 50
+tony 88
+alice 80
